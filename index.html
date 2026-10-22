@@ -73,20 +73,52 @@
 
 <!-- ===== HERO ===== -->
 <section class="hero">
-  <div class="hero-photo" aria-hidden="true"></div>
-  <div class="hero-bg" aria-hidden="true"></div>
-  <div class="wrap hero-content">
-    <p class="eyebrow">Custom Builders · London, Ontario</p>
-    <h1>We don't renovate.<br><span class="h1-accent">We build.</span></h1>
-    <p class="hero-lede">HOM Construction builds across Southwestern Ontario, from garages and additions to full custom homes. Our focus is the Additional Dwelling Unit: a complete, permitted home that adds income, value, and room for family.</p>
-    <div class="hero-actions">
-      <a href="#contact" class="btn">Request a Consultation</a>
-      <a href="#gallery" class="btn btn-ghost">View Our Projects</a>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Custom Builders · London, Ontario</p>
+      <h1>We don't renovate.<br><span class="h1-accent">We build.</span></h1>
+      <p class="hero-lede">HOM Construction builds across Southwestern Ontario, from garages and additions to full custom homes. Our focus is the Additional Dwelling Unit: a complete, permitted home that adds income, value, and room for family.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn">Request a Consultation</a>
+        <a href="#gallery" class="btn btn-ghost">View Our Projects</a>
+      </div>
     </div>
-    <div class="hero-stats">
-      <div class="stat"><span class="stat-num">Builders</span><span class="stat-label">Not renovators</span></div>
-      <div class="stat"><span class="stat-num">London</span><span class="stat-label">Strathroy, St. Thomas &amp; Woodstock</span></div>
-      <div class="stat"><span class="stat-num">Owner-led</span><span class="stat-label">Brandon runs every project</span></div>
+    <div class="hero-visual">
+      <div class="hero-photo-panel">
+        <img src="assets/projects/hero-kitchen.jpg" alt="Finished open-concept kitchen and dining area built by HOM Construction" width="1544" height="869">
+      </div>
+      <div class="hero-badge hero-badge-top">
+        <span class="badge-num">Owner-led</span>
+        <span class="badge-label">Brandon runs every project</span>
+      </div>
+      <div class="hero-badge hero-badge-bottom">
+        <span class="badge-num">4 regions</span>
+        <span class="badge-label">Across Southwestern Ontario</span>
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="hero-formbar">
+      <div class="hf-field">
+        <label for="hf-name">Name</label>
+        <input type="text" id="hf-name" placeholder="Your name">
+      </div>
+      <div class="hf-field">
+        <label for="hf-phone">Phone</label>
+        <input type="tel" id="hf-phone" placeholder="Your phone">
+      </div>
+      <div class="hf-field">
+        <label for="hf-project">Project</label>
+        <select id="hf-project">
+          <option value="" disabled selected>Select one</option>
+          <option>Additional Dwelling Unit</option>
+          <option>Garage</option>
+          <option>Addition</option>
+          <option>Major Renovation</option>
+          <option>New Construction</option>
+        </select>
+      </div>
+      <a href="#contact" class="btn hf-submit">Get a Quote</a>
     </div>
   </div>
 </section>
@@ -282,7 +314,7 @@
         <p>Our home base. Full-service construction in every neighbourhood across the city.</p>
         <span class="area-link">Book a project</span>
       </a>
-      <a href="service-areas/strathroy.html" class="area-card area-highlight" data-stagger>
+      <a href="service-areas/strathroy.html" class="area-card" data-stagger>
         <h3>Strathroy</h3>
         <p>A growing market with few builders serving it. We're bringing custom-grade work to town.</p>
         <span class="area-link">Book a project</span>

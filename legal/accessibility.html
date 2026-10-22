@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Accessibility | HOM Construction Ltd.</title>
+<meta name="description" content="Accessibility statement for HOM Construction Ltd.">
+<meta name="robots" content="noindex,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="../assets/hom-logo.png">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<header id="site-header">
+  <div class="wrap header-inner">
+    <a href="../index.html" class="brand" aria-label="HOM Construction home"><picture><source srcset="../assets/hom-logo.avif" type="image/avif"><img src="../assets/hom-logo.png" alt="HOM Construction Ltd." class="brand-logo" width="376" height="166"></picture></a>
+    <nav class="nav"><a href="../index.html#services">Services</a><a href="../index.html#gallery">Projects</a><a href="../index.html#areas">Service Areas</a></nav>
+    <a href="../index.html#contact" class="btn btn-sm nav-cta">Start Your Project</a>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Legal</p>
+    <h1>Accessibility Statement</h1>
+  </div>
+</section>
+
+<main class="wrap doc-body">
+  <p><em>Last updated: <span id="updated"></span></em></p>
+  <p>HOM Construction Ltd. is committed to ensuring our website is accessible to all users, including people with disabilities, in keeping with the Accessibility for Ontarians with Disabilities Act (AODA) and the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA.</p>
+
+  <h2>Our Commitment</h2>
+  <ul>
+    <li>Clear, readable typography and strong colour contrast;</li>
+    <li>Keyboard-navigable menus, links, and forms with visible focus states;</li>
+    <li>Descriptive labels for all form fields and interactive elements;</li>
+    <li>Responsive layouts that work across devices and screen sizes;</li>
+    <li>Respect for reduced-motion preferences.</li>
+  </ul>
+
+  <h2>Ongoing Effort</h2>
+  <p>Accessibility is an ongoing process. We review our website regularly and work to improve the experience for every visitor.</p>
+
+  <h2>Feedback</h2>
+  <p>If you encounter any barrier using this website, or need information in an alternative format, please let us know through our <a href="../index.html#contact">contact form</a>. We will do our best to accommodate your request.</p>
+
+  <a href="../index.html" class="back-home">← Back to Home</a>
+</main>
+
+<footer id="site-footer">
+  <div class="wrap footer-bottom">
+    <span>© <span id="year"></span> HOM Construction Ltd. All rights reserved.</span>
+    <span>1891 Royal Crescent · London, Ontario</span>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();document.getElementById('updated').textContent=new Date().toLocaleDateString('en-CA',{year:'numeric',month:'long',day:'numeric'});</script>
+</body>
+</html>

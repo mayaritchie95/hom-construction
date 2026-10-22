@@ -57,20 +57,70 @@
     });
   }
 
-  // Lead form (front-end only; wire to email/CRM backend on launch)
-  var form = document.getElementById('leadForm');
-  if (form) {
+  // --- Formspree-powered forms (hero quick form + main contact form) ---
+  // Both post to the same Formspree endpoint set in each form's `action`.
+  // Replace YOUR_FORM_ID in the HTML with your real Formspree form ID.
+  function wireForm(formId, successId) {
+    var form = document.getElementById(formId);
+    if (!form) return;
+    var success = successId ? document.getElementById(successId) : null;
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.checkValidity()) {
         form.reportValidity();
         return;
       }
-      // TODO on launch: POST to email endpoint, Formspree, or landing-page handler.
-      var success = document.getElementById('formSuccess');
-      if (success) success.hidden = false;
-      form.querySelector('button[type="submit"]').disabled = true;
-      success && success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var originalText = submitBtn ? submitBtn.textContent : '';
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+
+      var endpoint = form.getAttribute('action');
+      // If the Formspree endpoint hasn't been set yet, just show success locally.
+      if (!endpoint || endpoint.indexOf('YOUR_FORM_ID') !== -1) {
+        showSuccess();
+        return;
+      }
+
+      fetch(endpoint, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function (res) {
+        if (res.ok) {
+          showSuccess();
+        } else {
+          res.json().then(function (data) {
+            var msg = (data && data.errors)
+              ? data.errors.map(function (x) { return x.message; }).join(', ')
+              : 'Something went wrong. Please try again, or call us directly.';
+            resetButton();
+            alert(msg);
+          }).catch(function () {
+            resetButton();
+            alert('Something went wrong. Please try again, or call us directly.');
+          });
+        }
+      }).catch(function () {
+        resetButton();
+        alert('Network error. Please try again, or call us directly.');
+      });
+
+      function showSuccess() {
+        if (success) {
+          success.hidden = false;
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        form.reset();
+        if (submitBtn) submitBtn.textContent = 'Sent';
+      }
+      function resetButton() {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalText; }
+      }
     });
   }
+
+  wireForm('leadForm', 'formSuccess');
+  wireForm('heroForm', 'heroFormSuccess');
 })();

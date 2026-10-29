@@ -33,7 +33,7 @@
   var header = document.getElementById('site-header');
   if (header) {
     var onScroll = function () {
-      if (window.scrollY > 24) {
+      if (window.scrollY > 80) {
         header.classList.add('scrolled');
         header.classList.remove('header-overlay');
       } else {

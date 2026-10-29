@@ -102,11 +102,11 @@ a{color:inherit;text-decoration:none}
   background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
   border-bottom:1px solid var(--border);
   padding-top:env(safe-area-inset-top,0px);
-  transition:background .25s ease,box-shadow .25s ease,border-color .25s ease;
+  transition:transform .3s ease, box-shadow .3s ease;
 }
 #site-header.scrolled{
-  background:rgba(255,255,255,.98);
-  box-shadow:0 4px 20px rgba(16,32,60,.1);
+  background:#fff;
+  box-shadow:0 6px 24px rgba(16,32,60,.14);
   border-bottom-color:transparent;
 }
 .header-inner{display:flex;align-items:center;gap:1.5rem;height:72px}
@@ -133,8 +133,9 @@ a{color:inherit;text-decoration:none}
 .header-overlay .brand-mark{color:#fff}
 .header-overlay .menu-toggle span{background:#fff}
 .header-overlay .brand-logo{filter:brightness(0) invert(1)}
-/* When scrolled, header becomes solid white again (handled by .scrolled) */
-#site-header.scrolled{position:fixed}
+/* When scrolled, header becomes a solid white bar that slides down from the top */
+#site-header.scrolled{position:fixed;background:#fff;animation:headerDrop .3s ease}
+@keyframes headerDrop{from{transform:translateY(-100%)}to{transform:translateY(0)}}
 #site-header.scrolled .nav a{color:var(--brand-blue)}
 #site-header.scrolled .nav a:hover{color:var(--orange)}
 #site-header.scrolled .brand-logo{filter:none}

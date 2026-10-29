@@ -134,7 +134,7 @@ a{color:inherit;text-decoration:none}
 .header-overlay .menu-toggle span{background:#fff}
 .header-overlay .brand-logo{filter:brightness(0) invert(1)}
 /* When scrolled, header becomes a solid white bar that slides down from the top */
-#site-header.scrolled{position:fixed;background:#fff;animation:headerDrop .3s ease}
+#site-header.scrolled{position:fixed;left:0;right:0;top:0;background:#fff;animation:headerDrop .3s ease}
 @keyframes headerDrop{from{transform:translateY(-100%)}to{transform:translateY(0)}}
 #site-header.scrolled .nav a{color:var(--brand-blue)}
 #site-header.scrolled .nav a:hover{color:var(--orange)}

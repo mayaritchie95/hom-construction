@@ -33,8 +33,13 @@
   var header = document.getElementById('site-header');
   if (header) {
     var onScroll = function () {
-      if (window.scrollY > 24) header.classList.add('scrolled');
-      else header.classList.remove('scrolled');
+      if (window.scrollY > 24) {
+        header.classList.add('scrolled');
+        header.classList.remove('header-overlay');
+      } else {
+        header.classList.remove('scrolled');
+        header.classList.add('header-overlay');
+      }
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();

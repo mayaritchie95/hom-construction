@@ -39,7 +39,7 @@
 <body>
 
 <!-- ===== HEADER ===== -->
-<header id="site-header">
+<header id="site-header" class="header-overlay">
   <div class="wrap header-inner">
     <a href="#top" class="brand" aria-label="HOM Construction home">
       <picture>
@@ -73,59 +73,53 @@
 
 <!-- ===== HERO ===== -->
 <section class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-copy">
-      <p class="eyebrow">Additional Dwelling Units · London, Ontario</p>
-      <h1>Keep Family Close.<br><span class="h1-accent">Build an ADU.</span></h1>
-      <p class="hero-lede">A home for the next generation, steps from yours. HOM Construction builds Additional Dwelling Units that let parents and adult children live close while keeping their independence, their privacy, and the comfort of a complete home.</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn">Request a Consultation</a>
-        <a href="#gallery" class="btn btn-ghost">View Our Projects</a>
-      </div>
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-inner wrap">
+    <p class="hero-eyebrow">Additional Dwelling Units &amp; Custom Builds · London, Ontario</p>
+    <h1>Keep Family Close.<br>Build an&nbsp;ADU.</h1>
+    <p class="hero-lede">A complete, permitted home for the next generation, steps from yours. HOM Construction builds Additional Dwelling Units, garages, and additions across Southwestern Ontario.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn">Request a Consultation</a>
+      <a href="#gallery" class="btn btn-outline-light">View Our Projects</a>
     </div>
-    <div class="hero-visual">
-      <div class="hero-photo-panel">
-        <img src="assets/projects/hero-home.jpg" alt="Warm, light-filled living room inside a finished HOM Construction home" width="901" height="1600">
-      </div>
-      <div class="hero-badge hero-badge-top">
-        <span class="badge-stars" aria-hidden="true">★★★★★</span>
-        <span class="badge-label">5-star rated on Google</span>
-      </div>
-      <div class="hero-badge hero-badge-bottom">
-        <span class="badge-num">20 years</span>
-        <span class="badge-label">Of building experience</span>
-      </div>
-    </div>
-  </div>
-  <div class="wrap">
-    <form class="hero-formbar" id="heroForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
-      <input type="hidden" name="_subject" value="New HOM Construction quote request (hero)">
-      <input type="hidden" name="source" value="Hero quick form">
-      <div class="hf-field">
-        <label for="hf-name">Name</label>
-        <input type="text" id="hf-name" name="name" placeholder="Your name" required autocomplete="name">
-      </div>
-      <div class="hf-field">
-        <label for="hf-phone">Phone</label>
-        <input type="tel" id="hf-phone" name="phone" placeholder="Your phone" required autocomplete="tel">
-      </div>
-      <div class="hf-field">
-        <label for="hf-project">Project</label>
-        <select id="hf-project" name="project_type" required>
-          <option value="" disabled selected>Select one</option>
-          <option>Detached ADU / Garden Suite</option>
-          <option>Attached ADU</option>
-          <option>Basement ADU</option>
-          <option>Garage ADU</option>
-          <option>Garage</option>
-          <option>Addition</option>
-        </select>
-      </div>
-      <button type="submit" class="btn hf-submit">Get a Quote</button>
-    </form>
-    <p class="hero-form-success" id="heroFormSuccess" hidden>Thanks for reaching out. We've got your details and will be in touch shortly.</p>
+    <ul class="hero-pills">
+      <li><span class="pill-star" aria-hidden="true">★★★★★</span> 5-Star Rated on Google</li>
+      <li>20 Years of Experience</li>
+      <li>Licensed &amp; Insured</li>
+      <li>Family-Operated</li>
+    </ul>
   </div>
 </section>
+
+<!-- ===== QUOTE BAR ===== -->
+<div class="quotebar-wrap wrap">
+  <form class="hero-formbar" id="heroForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+    <input type="hidden" name="_subject" value="New HOM Construction quote request (hero)">
+    <input type="hidden" name="source" value="Hero quick form">
+    <div class="hf-field">
+      <label for="hf-name">Name</label>
+      <input type="text" id="hf-name" name="name" placeholder="Your name" required autocomplete="name">
+    </div>
+    <div class="hf-field">
+      <label for="hf-phone">Phone</label>
+      <input type="tel" id="hf-phone" name="phone" placeholder="Your phone" required autocomplete="tel">
+    </div>
+    <div class="hf-field">
+      <label for="hf-project">Project</label>
+      <select id="hf-project" name="project_type" required>
+        <option value="" disabled selected>Select one</option>
+        <option>Detached ADU / Garden Suite</option>
+        <option>Attached ADU</option>
+        <option>Basement ADU</option>
+        <option>Garage ADU</option>
+        <option>Garage</option>
+        <option>Addition</option>
+      </select>
+    </div>
+    <button type="submit" class="btn hf-submit">Get a Free Quote</button>
+  </form>
+  <p class="hero-form-success" id="heroFormSuccess" hidden>Thanks for reaching out. We've got your details and will be in touch shortly.</p>
+</div>
 
 <!-- ===== TRUST STRIP ===== -->
 <section class="trust-strip">
@@ -195,38 +189,69 @@
 <!-- ===== SERVICES ===== -->
 <section id="services" class="section section-dots">
   <div class="wrap">
-    <div data-reveal>
-    <p class="section-tag">What We Build</p>
-    <h2>Five things we build well.</h2>
-    <p class="section-lede">Every project gets the same crew and the same standard, whether it's a full home or a single-car garage. Additional Dwelling Units are where we've built our name.</p>
+    <div class="section-head-center" data-reveal>
+      <p class="section-tag">Our Expertise</p>
+      <h2>What We Build</h2>
+      <p class="section-lede">From dwelling units to ground-up construction, we deliver the same craftsmanship and the same standard across every service we offer.</p>
     </div>
     <div class="services-grid" data-reveal>
-      <article class="service-item service-feature" data-stagger>
-        <span class="service-flag">Our Specialty</span>
-        <h3>Additional Dwelling Units</h3>
-        <p>Detached and attached units, garden suites, and laneway homes, engineered and permitted as complete residences. It's the work we're best known for, and the standard the rest of our builds are held to.</p>
-        <a href="#adu" class="service-link">Why owners build one</a>
+      <article class="svc-card svc-feature" data-stagger>
+        <div class="svc-media">
+          <img src="assets/projects/adu-white-exterior.jpg" alt="Finished detached ADU with board-and-batten siding" loading="lazy" width="1300" height="732">
+          <span class="svc-flag">Our Specialty</span>
+        </div>
+        <div class="svc-body">
+          <h3>Additional Dwelling Units</h3>
+          <p>Detached and attached units, garden suites, and conversions, engineered and permitted as complete residences for rental income or multi-generational living.</p>
+          <a href="#adu" class="svc-link">Why owners build one</a>
+        </div>
       </article>
-      <article class="service-item" data-stagger>
-        <h3>Garages</h3>
-        <p>Detached and attached garages with proper foundations, framing, and finishes, built to last and designed to match your home.</p>
+      <article class="svc-card" data-stagger>
+        <div class="svc-media">
+          <img src="assets/projects/garage-black.jpg" alt="New detached garage with dark siding and a modern glass door" loading="lazy" width="975" height="1300">
+        </div>
+        <div class="svc-body">
+          <h3>Garages</h3>
+          <p>Detached and attached garages with proper foundations and finishes, built to last and designed to match your home.</p>
+          <a href="#contact" class="svc-link">Start a project</a>
+        </div>
       </article>
-      <article class="service-item" data-stagger>
-        <h3>Additions</h3>
-        <p>Extra space that ties into your home seamlessly, matching the existing structure and finish so the join is invisible.</p>
+      <article class="svc-card" data-stagger>
+        <div class="svc-media">
+          <img src="assets/projects/addition-build.jpg" alt="Home addition under construction with new windows installed" loading="lazy" width="975" height="1300">
+        </div>
+        <div class="svc-body">
+          <h3>Additions</h3>
+          <p>Extra space that ties into your home seamlessly, matching the existing structure and finish so the join is invisible.</p>
+          <a href="#contact" class="svc-link">Start a project</a>
+        </div>
       </article>
-      <article class="service-item" data-stagger>
-        <h3>Major Renovations</h3>
-        <p>Whole-home transformations run on a clear timeline and a firm budget, handled by one team from demolition to final detail.</p>
+      <article class="svc-card" data-stagger>
+        <div class="svc-media">
+          <img src="assets/projects/dining-home.jpg" alt="Warm finished interior with pendant lighting after a renovation" loading="lazy" width="1300" height="732">
+        </div>
+        <div class="svc-body">
+          <h3>Major Renovations</h3>
+          <p>Whole-home transformations on a clear timeline and a firm budget, handled by one team from demolition to final detail.</p>
+          <a href="#contact" class="svc-link">Start a project</a>
+        </div>
       </article>
-      <article class="service-item" data-stagger>
-        <h3>New Construction</h3>
-        <p>Ground-up custom homes, managed start to finish, from footing and framing through to the finishes that make it yours.</p>
+      <article class="svc-card" data-stagger>
+        <div class="svc-media">
+          <img src="assets/projects/garden-suite-white.jpg" alt="Completed new build at the end of a fresh concrete driveway" loading="lazy" width="732" height="1300">
+        </div>
+        <div class="svc-body">
+          <h3>New Construction</h3>
+          <p>Ground-up custom homes, managed start to finish, from footing and framing through to the finishes that make it yours.</p>
+          <a href="#contact" class="svc-link">Start a project</a>
+        </div>
       </article>
-      <article class="service-item service-cta" data-stagger>
-        <h3>Have a project in mind?</h3>
-        <p>Tell us what you're planning. We'll walk through it with you and map out the next steps.</p>
-        <a href="#contact" class="btn btn-sm">Book Your Project</a>
+      <article class="svc-card svc-card-cta" data-stagger>
+        <div class="svc-body">
+          <h3>Have a project in mind?</h3>
+          <p>Tell us what you're planning and we'll walk through it with you, then map out the next steps.</p>
+          <a href="#contact" class="btn btn-sm">Book Your Project</a>
+        </div>
       </article>
     </div>
   </div>

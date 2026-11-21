@@ -51,6 +51,7 @@
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#adu">ADUs</a>
+      <a href="#models">Models</a>
       <a href="#gallery">Projects</a>
       <a href="#areas">Service Areas</a>
       <a href="#reviews">Reviews</a>
@@ -62,6 +63,7 @@
     <a href="#about">About</a>
     <a href="#services">Services</a>
     <a href="#adu">ADUs</a>
+    <a href="#models">Models</a>
     <a href="#gallery">Projects</a>
     <a href="#areas">Service Areas</a>
     <a href="#reviews">Reviews</a>
@@ -73,7 +75,11 @@
 
 <!-- ===== HERO ===== -->
 <section class="hero">
-  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-bg" aria-hidden="true">
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/projects/hero-poster.jpg">
+      <source src="assets/video/hero.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="hero-inner wrap">
     <p class="hero-eyebrow">Additional Dwelling Units &amp; Custom Builds · London, Ontario</p>
     <h1>Keep Family Close.<br>Build an&nbsp;ADU.</h1>
@@ -183,6 +189,87 @@
     <div class="adu-cta">
       <a href="#contact" class="btn">See If Your Property Qualifies</a>
     </div>
+  </div>
+</section>
+
+<!-- ===== ADU MODELS =====
+     PLACEHOLDER CONTENT — replace model names, specs, prices, and photos with real data.
+     Each card: name, type, size, beds/baths, starting price (or keep "Request a Quote"). -->
+<section id="models" class="section section-tint">
+  <div class="wrap">
+    <div class="section-head-center" data-reveal>
+      <p class="section-tag">Pick a Starting Point</p>
+      <h2>Our ADU Models</h2>
+      <p class="section-lede">Proven layouts you can build as-is or customize to your property. Each model is a complete, permitted home — choose a starting point and we'll tailor it to your lot and budget.</p>
+    </div>
+    <div class="models-grid" data-reveal>
+      <article class="model-card" data-stagger>
+        <div class="model-media">
+          <img src="assets/projects/garden-suite-white.jpg" alt="The Garden Suite model ADU" loading="lazy">
+          <span class="model-badge">Most Popular</span>
+        </div>
+        <div class="model-body">
+          <h3>The Garden Suite</h3>
+          <p class="model-type">Detached ADU · Garden Suite</p>
+          <ul class="model-specs">
+            <li><strong>—— sq ft</strong><span>Size</span></li>
+            <li><strong>1 Bed</strong><span>Bedrooms</span></li>
+            <li><strong>1 Bath</strong><span>Bathrooms</span></li>
+          </ul>
+          <p class="model-price">Starting at <strong>$———</strong></p>
+          <a href="#contact" class="btn btn-sm btn-full">Request a Quote</a>
+        </div>
+      </article>
+      <article class="model-card" data-stagger>
+        <div class="model-media">
+          <img src="assets/projects/garage-black.jpg" alt="The Garage Conversion model ADU" loading="lazy">
+        </div>
+        <div class="model-body">
+          <h3>The Garage Conversion</h3>
+          <p class="model-type">Garage ADU</p>
+          <ul class="model-specs">
+            <li><strong>—— sq ft</strong><span>Size</span></li>
+            <li><strong>1 Bed</strong><span>Bedrooms</span></li>
+            <li><strong>1 Bath</strong><span>Bathrooms</span></li>
+          </ul>
+          <p class="model-price">Starting at <strong>$———</strong></p>
+          <a href="#contact" class="btn btn-sm btn-full">Request a Quote</a>
+        </div>
+      </article>
+      <article class="model-card" data-stagger>
+        <div class="model-media">
+          <img src="assets/projects/adu-concrete.jpg" alt="The Backyard Studio model ADU" loading="lazy">
+        </div>
+        <div class="model-body">
+          <h3>The Backyard Studio</h3>
+          <p class="model-type">Detached ADU</p>
+          <ul class="model-specs">
+            <li><strong>—— sq ft</strong><span>Size</span></li>
+            <li><strong>Studio</strong><span>Bedrooms</span></li>
+            <li><strong>1 Bath</strong><span>Bathrooms</span></li>
+          </ul>
+          <p class="model-price">Starting at <strong>$———</strong></p>
+          <a href="#contact" class="btn btn-sm btn-full">Request a Quote</a>
+        </div>
+      </article>
+      <article class="model-card" data-stagger>
+        <div class="model-media">
+          <img src="assets/projects/adu-white-exterior.jpg" alt="The Family Suite model ADU" loading="lazy">
+        </div>
+        <div class="model-body">
+          <h3>The Family Suite</h3>
+          <p class="model-type">Detached ADU</p>
+          <ul class="model-specs">
+            <li><strong>—— sq ft</strong><span>Size</span></li>
+            <li><strong>2 Bed</strong><span>Bedrooms</span></li>
+            <li><strong>1 Bath</strong><span>Bathrooms</span></li>
+          </ul>
+          <p class="model-price">Starting at <strong>$———</strong></p>
+          <a href="#contact" class="btn btn-sm btn-full">Request a Quote</a>
+        </div>
+      </article>
+    </div>
+    <p class="models-note">Every model is fully customizable. Don't see what you're looking for? <a href="#contact">Tell us about your project</a> and we'll design around your needs.</p>
   </div>
 </section>
 
@@ -304,26 +391,53 @@
       </figure>
     </div>
 
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Project image viewer">
+      <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+      <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous image">&#8249;</button>
+      <figure class="lb-figure">
+        <img id="lbImg" src="" alt="">
+        <figcaption id="lbCaption"></figcaption>
+      </figure>
+      <button class="lb-nav lb-next" id="lbNext" aria-label="Next image">&#8250;</button>
+    </div>
+
     <div class="matterport" data-reveal>
       <div class="matterport-head">
         <h3>Step Inside in 3D</h3>
-        <p>Take a self-guided virtual walkthrough of two of our finished builds, room by room.</p>
+        <p>Take a self-guided virtual walkthrough of our finished builds, room by room. Tap a tour or scan the code to explore on your phone.</p>
       </div>
       <div class="matterport-row">
-        <a href="https://my.matterport.com/show/?m=qAPRNwR71cm" target="_blank" rel="noopener" class="matterport-link">
-          <span class="mp-ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-6 9 6v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 21V12h6v9"/></svg>
-          </span>
-          <span class="mp-text"><strong>Walk Through an ADU</strong><span>Self-guided 3D tour · Matterport</span></span>
-          <span class="mp-arrow" aria-hidden="true">→</span>
-        </a>
-        <a href="https://my.matterport.com/show/?m=cvzpBDNp59R" target="_blank" rel="noopener" class="matterport-link">
-          <span class="mp-ico" aria-hidden="true">
-            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-6 9 6v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 21V12h6v9"/></svg>
-          </span>
-          <span class="mp-text"><strong>Walk Through a Suite</strong><span>Self-guided 3D tour · Matterport</span></span>
-          <span class="mp-arrow" aria-hidden="true">→</span>
-        </a>
+        <div class="matterport-card">
+          <a href="https://my.matterport.com/show/?m=TnbYYCTizjo" target="_blank" rel="noopener" class="matterport-link">
+            <span class="mp-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            </span>
+            <span class="mp-text"><strong>Detached Duplex ADU</strong><span>Self-guided 3D tour · Matterport</span></span>
+            <span class="mp-arrow" aria-hidden="true">→</span>
+          </a>
+          <img class="mp-qr" src="assets/qr/tour-detached.png" alt="QR code to open the Detached Duplex ADU 3D tour" width="120" height="120" loading="lazy">
+        </div>
+        <div class="matterport-card">
+          <a href="https://my.matterport.com/show/?m=PfX1GpM6nXn" target="_blank" rel="noopener" class="matterport-link">
+            <span class="mp-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            </span>
+            <span class="mp-text"><strong>Garage ADU</strong><span>Self-guided 3D tour · Matterport</span></span>
+            <span class="mp-arrow" aria-hidden="true">→</span>
+          </a>
+          <img class="mp-qr" src="assets/qr/tour-garage.png" alt="QR code to open the Garage ADU 3D tour" width="120" height="120" loading="lazy">
+        </div>
+        <div class="matterport-card">
+          <a href="https://my.matterport.com/show/?m=cvzpBDNp59R" target="_blank" rel="noopener" class="matterport-link">
+            <span class="mp-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            </span>
+            <span class="mp-text"><strong>Attached ADU</strong><span>Self-guided 3D tour · Matterport</span></span>
+            <span class="mp-arrow" aria-hidden="true">→</span>
+          </a>
+          <img class="mp-qr" src="assets/qr/tour-attached.png" alt="QR code to open the Attached ADU 3D tour" width="120" height="120" loading="lazy">
+        </div>
       </div>
     </div>
   </div>
@@ -379,7 +493,9 @@
     <p class="section-tag">Reviews</p>
     <h2>What our clients say</h2>
     </div>
-    <div class="testimonials" data-reveal>
+    <div class="reviews-carousel" data-reveal>
+      <div class="reviews-viewport">
+        <div class="reviews-track" id="reviewsTrack">
       <blockquote class="testimonial" data-stagger>
         <p>"We hired Brandon to turn our old detached garage into a one-bedroom rental suite. Between city permits, financing, utility work and countless trades, Brandon made it all run smoothly. The finished space looks and feels incredible — it's hard to believe it was once a garage, or that it's only 500 square feet."</p>
         <footer>— Chris Taylor</footer>
@@ -410,6 +526,9 @@
         <footer>— Hoai Q. Nguyen</footer>
         <div class="review-source"><span class="g-icon">G</span> Verified Google Review</div>
       </blockquote>
+        </div>
+      </div>
+      <div class="reviews-dots" id="reviewsDots" aria-label="Review navigation"></div>
     </div>
     <div class="google-reviews-placeholder">
       <a class="gr-badge" href="https://share.google/WOeoYm1ViX1rlSRPR" target="_blank" rel="noopener">
@@ -560,6 +679,7 @@
       <a href="#about">About</a>
       <a href="#services">Services</a>
       <a href="#adu">ADUs</a>
+      <a href="#models">Models</a>
       <a href="#gallery">Projects</a>
       <a href="#reviews">Reviews</a>
     </div>

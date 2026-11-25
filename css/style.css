@@ -287,7 +287,7 @@ a{color:inherit;text-decoration:none}
 .feature-text{padding:1.5rem 1.4rem 1.7rem}
 .feature-card h3{margin-bottom:.5rem}
 .feature-card p{color:#B9Bec5;font-size:.95rem;margin:0}
-.adu-cta{margin-top:clamp(2.5rem,5vw,3.5rem)}
+.adu-cta-top{margin-top:1.8rem}
 
 /* ---------- ADU Models ---------- */
 .models-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2.8rem}
@@ -558,7 +558,13 @@ a{color:inherit;text-decoration:none}
 /* ---------- Legal / area page body ---------- */
 .page-hero{background:var(--ink);color:#fff;padding:clamp(5rem,9vw,7rem) 0 clamp(3rem,6vw,4rem)}
 .page-hero h1{font-size:clamp(2.2rem,5vw,3.4rem);max-width:20ch}
-.page-hero .eyebrow{color:var(--steel-bright)}
+.page-hero .eyebrow{color:var(--orange-bright)}
+/* Aerial background variant for service-area pages */
+.page-hero-aerial{position:relative;overflow:hidden;isolation:isolate;padding-top:clamp(7rem,12vw,9rem)}
+.page-hero-bg{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover}
+.page-hero-overlay{position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(180deg,rgba(8,20,45,.78) 0%,rgba(8,20,45,.66) 55%,rgba(8,20,45,.85) 100%);}
+.page-hero-aerial .wrap{position:relative;z-index:1}
 .doc-body{padding:clamp(3rem,7vw,5rem) 0;max-width:800px}
 .doc-body h2{font-size:clamp(1.4rem,3vw,1.9rem);margin:2.4rem 0 .9rem}
 .doc-body h3{margin:1.6rem 0 .6rem}
@@ -638,7 +644,9 @@ html.js-anim .hero-copy > *:nth-child(5){animation-delay:.38s}
   color:var(--concrete);transition:border-color .2s,color .2s,background .2s;
 }
 .social-row a:hover{border-color:var(--orange);color:var(--orange)}
-.social-row svg{width:20px;height:20px;fill:currentColor}
+.social-row svg{width:20px;height:20px}
+.social-row svg[fill="none"]{stroke:currentColor}
+.social-row svg:not([fill="none"]){fill:currentColor}
 
 /* ---------- Review meta (verified badge) ---------- */
 .review-source{display:flex;align-items:center;gap:.5rem;margin-top:.9rem;font-size:.82rem;color:var(--concrete)}

@@ -1,9 +1,9 @@
 # HOM Construction Ltd. — Launch Checklist
 
-Static site, no build step. Upload the whole `hom-construction/` folder to your host (root = `index.html`).
+Static site, no build step. Upload the contents of this folder to your host (root = `index.html`).
 
 ## Before go-live (replace placeholders)
-1. **Phone & email** — add to `index.html` (JSON-LD `telephone`), footer, and contact section.
+1. **Phone** — done: (226) 973-3828 in header, contact section, footers, and JSON-LD. Add an email address if you want one shown.
 2. **Lead form** — in `js/main.js`, replace the TODO with a real handler:
    - Email: Formspree / Basin / your form endpoint, OR
    - Landing page: point `form.action` to your lead-filter page.
@@ -13,7 +13,7 @@ Static site, no build step. Upload the whole `hom-construction/` folder to your 
 5. **Matterport** — set the two `.matterport-link` `href`s to your tour URLs (Gallery section).
 6. **Project photos** — swap the CSS-pattern `.gallery-item` / `.media-block` blocks for real `<img>` tags.
 7. **Logo** — swap text `.brand-mark` for your logo image if desired.
-8. **og-image.jpg** — add a 1200x630 share image at root.
+8. **og-image.jpg** — done (1200x630 share image at root).
 9. **Keywords** — fold in the list from Michael Miceli / Page Pros across titles, H1s, and meta.
 
 ## SEO already in place

@@ -198,15 +198,30 @@
       });
     });
 
-    document.getElementById('lbClose').addEventListener('click', close);
-    document.getElementById('lbPrev').addEventListener('click', function (e) { e.stopPropagation(); show(current - 1); });
-    document.getElementById('lbNext').addEventListener('click', function (e) { e.stopPropagation(); show(current + 1); });
-    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+    // Model floor-plan / interior thumbnails open in the same lightbox (single image, no prev/next)
+    var singleMode = false;
+    document.querySelectorAll('.model-thumb').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        singleMode = true;
+        lbImg.src = btn.getAttribute('data-full');
+        lbImg.alt = btn.getAttribute('data-cap') || '';
+        lbCap.textContent = btn.getAttribute('data-cap') || '';
+        lb.classList.add('open'); lb.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        lb.classList.add('lb-single');
+      });
+    });
+
+    document.getElementById('lbClose').addEventListener('click', function () { lb.classList.remove('lb-single'); singleMode = false; close(); });
+    document.getElementById('lbPrev').addEventListener('click', function (e) { e.stopPropagation(); if (!singleMode) show(current - 1); });
+    document.getElementById('lbNext').addEventListener('click', function (e) { e.stopPropagation(); if (!singleMode) show(current + 1); });
+    function fullClose(){ lb.classList.remove('lb-single'); singleMode = false; close(); }
+    lb.addEventListener('click', function (e) { if (e.target === lb) fullClose(); });
     document.addEventListener('keydown', function (e) {
       if (!lb.classList.contains('open')) return;
-      if (e.key === 'Escape') close();
-      else if (e.key === 'ArrowLeft') show(current - 1);
-      else if (e.key === 'ArrowRight') show(current + 1);
+      if (e.key === 'Escape') fullClose();
+      else if (!singleMode && e.key === 'ArrowLeft') show(current - 1);
+      else if (!singleMode && e.key === 'ArrowRight') show(current + 1);
     });
   })();
 

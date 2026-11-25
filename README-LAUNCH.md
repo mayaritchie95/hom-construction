@@ -9,7 +9,7 @@ Static site, no build step. Upload the contents of this folder to your host (roo
    - Landing page: point `form.action` to your lead-filter page.
    Form already captures: name, address, phone, email, ADU type, timeline, ownership, budget, notes.
 3. **Google Reviews widget** — paste embed into `#reviews .google-reviews-placeholder` (replace the placeholder badge).
-4. **Financeit widget** — paste embed into `.financeit-placeholder` (Financing section).
+4. **Financeit** — done: the Financing section's "Apply for Financing" button links to https://www.financeit.ca/s/tH4xuA (new tab).
 5. **Matterport** — set the two `.matterport-link` `href`s to your tour URLs (Gallery section).
 6. **Project photos** — swap the CSS-pattern `.gallery-item` / `.media-block` blocks for real `<img>` tags.
 7. **Logo** — swap text `.brand-mark` for your logo image if desired.

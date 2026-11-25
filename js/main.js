@@ -147,6 +147,18 @@
     });
   }
 
+  // --- Alternating hero headline ---
+  (function () {
+    var phrases = document.querySelectorAll('.hero-rotator .hero-phrase');
+    if (phrases.length < 2) return;
+    var i = 0;
+    setInterval(function () {
+      phrases[i].classList.remove('is-active');
+      i = (i + 1) % phrases.length;
+      phrases[i].classList.add('is-active');
+    }, 4500);
+  })();
+
   // --- Gallery lightbox ---
   (function () {
     var lb = document.getElementById('lightbox');

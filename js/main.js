@@ -304,6 +304,48 @@
     el.addEventListener('input', function () { el.setCustomValidity(''); });
   });
 
+
+  // --- Matterport 3D tours open in an on-page viewer ---
+  (function () {
+    var modal = document.getElementById('tourModal');
+    if (!modal) return;
+    var frame = document.getElementById('tourFrame');
+    var title = document.getElementById('tourTitle');
+    var full = document.getElementById('tourFull');
+    var closeBtn = document.getElementById('tourClose');
+    var lastFocus = null;
+    function open(url, name) {
+      lastFocus = document.activeElement;
+      var sep = url.indexOf('?') > -1 ? '&' : '?';
+      frame.src = url + sep + 'play=1&qs=1';
+      full.href = url;
+      title.textContent = name || '3D Tour';
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+    function close() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      frame.src = 'about:blank';
+      document.body.style.overflow = '';
+      if (lastFocus) lastFocus.focus();
+    }
+    document.querySelectorAll('a[data-tour]').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1) return; // let "open in new tab" still work
+        e.preventDefault();
+        var t = a.querySelector('.mp-text strong');
+        open(a.href, t ? t.textContent + ' \u00b7 3D Tour' : '3D Tour');
+      });
+    });
+    closeBtn.addEventListener('click', close);
+    full.addEventListener('click', function () { setTimeout(close, 50); });
+    modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
+  })();
+
   wireForm('leadForm', 'formSuccess');
   wireForm('heroForm', 'heroFormSuccess');
 })();

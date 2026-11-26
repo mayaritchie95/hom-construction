@@ -145,7 +145,7 @@
     <span class="dot" aria-hidden="true"></span>
     <span>Financing Available</span>
     <span class="dot" aria-hidden="true"></span>
-    <span>Serving London · Strathroy · St. Thomas · Woodstock</span>
+    <span>Serving London &amp; Surrounding Area</span>
   </div>
 </section>
 
@@ -189,7 +189,7 @@
         </div>
       </article>
       <article class="feature-card" data-stagger>
-        <div class="feature-media"><img src="assets/benefits/room-for-family.jpg" alt="A family carrying moving boxes into their new home" loading="lazy" width="800" height="500"></div>
+        <div class="feature-media"><img src="assets/benefits/room-for-family.jpg" alt="A woman helping her elderly mother into a backyard suite" loading="lazy" width="800" height="500"></div>
         <div class="feature-text">
           <h3>Room for Family</h3>
           <p>Give a parent or an adult child their own space, with privacy on both sides, on your property or theirs.</p>
@@ -427,14 +427,28 @@
       <button class="lb-nav lb-next" id="lbNext" aria-label="Next image">&#8250;</button>
     </div>
 
+    <!-- 3D tour viewer (keeps visitors on the page) -->
+    <div class="tour-modal" id="tourModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="tourTitle">
+      <div class="tour-dialog">
+        <div class="tour-bar">
+          <strong id="tourTitle">3D Tour</strong>
+          <div class="tour-actions">
+            <a id="tourFull" href="#" target="_blank" rel="noopener" class="tour-full">Open full screen</a>
+            <button class="tour-close" id="tourClose" aria-label="Close tour">&times;</button>
+          </div>
+        </div>
+        <div class="tour-frame"><iframe id="tourFrame" title="Matterport 3D tour" src="about:blank" allow="fullscreen; xr-spatial-tracking; vr" allowfullscreen></iframe></div>
+      </div>
+    </div>
+
     <div class="matterport" data-reveal>
       <div class="matterport-head">
         <h3>Step Inside in 3D</h3>
-        <p>Take a self-guided virtual walkthrough of our finished builds, room by room. Tap a tour or scan the code to explore on your phone.</p>
+        <p>Take a self-guided virtual walkthrough of our finished builds, room by room. Open a tour right here, or scan the code to explore on your phone.</p>
       </div>
       <div class="matterport-row">
         <div class="matterport-card">
-          <a href="https://my.matterport.com/show/?m=TnbYYCTizjo" target="_blank" rel="noopener" class="matterport-link">
+          <a href="https://my.matterport.com/show/?m=TnbYYCTizjo" target="_blank" rel="noopener" class="matterport-link" data-tour>
             <span class="mp-ico" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
             </span>
@@ -444,7 +458,7 @@
           <img class="mp-qr" src="assets/qr/tour-detached.png" alt="QR code to open the Detached Duplex ADU 3D tour" width="120" height="120" loading="lazy">
         </div>
         <div class="matterport-card">
-          <a href="https://my.matterport.com/show/?m=PfX1GpM6nXn" target="_blank" rel="noopener" class="matterport-link">
+          <a href="https://my.matterport.com/show/?m=PfX1GpM6nXn" target="_blank" rel="noopener" class="matterport-link" data-tour>
             <span class="mp-ico" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
             </span>
@@ -454,7 +468,7 @@
           <img class="mp-qr" src="assets/qr/tour-garage.png" alt="QR code to open the Garage ADU 3D tour" width="120" height="120" loading="lazy">
         </div>
         <div class="matterport-card">
-          <a href="https://my.matterport.com/show/?m=cvzpBDNp59R" target="_blank" rel="noopener" class="matterport-link">
+          <a href="https://my.matterport.com/show/?m=cvzpBDNp59R" target="_blank" rel="noopener" class="matterport-link" data-tour>
             <span class="mp-ico" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
             </span>
@@ -505,14 +519,14 @@
         <p>Additions, garages, and new homes for owners across Oxford County.</p>
         <span class="area-link">Book a project</span>
       </a>
-      <a href="#contact" class="area-card area-aerial" data-stagger>
+      <a href="service-areas/lucan.html" class="area-card area-aerial" data-stagger>
         <img class="area-bg-img" src="assets/areas/lucan.jpg" alt="" aria-hidden="true" loading="lazy">
         <span class="area-overlay" aria-hidden="true"></span>
         <h3>Lucan</h3>
         <p>Full-service building and additions for homeowners north of the city.</p>
         <span class="area-link">Book a project</span>
       </a>
-      <a href="#contact" class="area-card area-aerial" data-stagger>
+      <a href="service-areas/ilderton.html" class="area-card area-aerial" data-stagger>
         <img class="area-bg-img" src="assets/areas/ilderton.jpg" alt="" aria-hidden="true" loading="lazy">
         <span class="area-overlay" aria-hidden="true"></span>
         <h3>Ilderton</h3>
@@ -619,20 +633,22 @@
         <div class="cd-item"><span class="cd-label">Contact</span><span>Brandon Dejong</span></div>
         <div class="cd-item"><span class="cd-label">Phone</span><a href="tel:+12269733828">(226) 973-3828</a></div>
         <div class="cd-item"><span class="cd-label">Address</span><span>1891 Royal Crescent</span></div>
-        <div class="cd-item"><span class="cd-label">Service Area</span><span>London · Strathroy · St. Thomas · Woodstock</span></div>
+        <div class="cd-item"><span class="cd-label">Service Area</span><span>London and surrounding area</span></div>
       </div>
     </div>
     <div class="contact-form-wrap" data-reveal>
       <form class="lead-form" id="leadForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
         <input type="hidden" name="_subject" value="New HOM Construction lead (contact form)">
         <input type="hidden" name="source" value="Main contact form">
-        <div class="field">
-          <label for="name">Full Name *</label>
-          <input type="text" id="name" name="name" required autocomplete="name">
-        </div>
-        <div class="field">
-          <label for="address">Property Address *</label>
-          <input type="text" id="address" name="address" required autocomplete="street-address">
+        <div class="field-row">
+          <div class="field">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="address">Property Address *</label>
+            <input type="text" id="address" name="address" required autocomplete="street-address">
+          </div>
         </div>
         <div class="field-row">
           <div class="field">
@@ -644,49 +660,53 @@
             <input type="email" id="email" name="email" required autocomplete="email">
           </div>
         </div>
-        <div class="field">
-          <label for="adu-type">Type of project *</label>
-          <select id="adu-type" name="project_type" required>
-            <option value="" disabled selected>Select one</option>
-            <option>Detached ADU / Garden Suite</option>
-            <option>Attached ADU</option>
-            <option>Basement ADU</option>
-            <option>Garage ADU</option>
-            <option>Garage</option>
-            <option>Addition</option>
-            <option>Not sure yet, need guidance</option>
-          </select>
+        <div class="field-row">
+          <div class="field">
+            <label for="adu-type">Type of project *</label>
+            <select id="adu-type" name="project_type" required>
+              <option value="" disabled selected>Select one</option>
+              <option>Detached ADU / Garden Suite</option>
+              <option>Attached ADU</option>
+              <option>Basement ADU</option>
+              <option>Garage ADU</option>
+              <option>Garage</option>
+              <option>Addition</option>
+              <option>Not sure yet, need guidance</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="timeline">When would you like to start? *</label>
+            <select id="timeline" name="timeline" required>
+              <option value="" disabled selected>Select one</option>
+              <option>As soon as possible</option>
+              <option>Within 3 months</option>
+              <option>3–6 months</option>
+              <option>6–12 months</option>
+              <option>Just researching</option>
+            </select>
+          </div>
         </div>
-        <div class="field">
-          <label for="timeline">When would you like to start? *</label>
-          <select id="timeline" name="timeline" required>
-            <option value="" disabled selected>Select one</option>
-            <option>As soon as possible</option>
-            <option>Within 3 months</option>
-            <option>3–6 months</option>
-            <option>6–12 months</option>
-            <option>Just researching</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="property-owner">Do you own the property? *</label>
-          <select id="property-owner" name="property-owner" required>
-            <option value="" disabled selected>Select one</option>
-            <option>Yes, building on my property</option>
-            <option>Building on my adult child's / family property</option>
-            <option>Not yet, still exploring</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="budget">Approximate budget range *</label>
-          <select id="budget" name="budget" required>
-            <option value="" disabled selected>Select one</option>
-            <option>Under $150k</option>
-            <option>$150k – $250k</option>
-            <option>$250k – $400k</option>
-            <option>$400k+</option>
-            <option>Need financing guidance</option>
-          </select>
+        <div class="field-row">
+          <div class="field">
+            <label for="property-owner">Do you own the property? *</label>
+            <select id="property-owner" name="property-owner" required>
+              <option value="" disabled selected>Select one</option>
+              <option>Yes, building on my property</option>
+              <option>Building on my adult child's / family property</option>
+              <option>Not yet, still exploring</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="budget">Approximate budget range *</label>
+            <select id="budget" name="budget" required>
+              <option value="" disabled selected>Select one</option>
+              <option>Under $150k</option>
+              <option>$150k – $250k</option>
+              <option>$250k – $400k</option>
+              <option>$400k+</option>
+              <option>Need financing guidance</option>
+            </select>
+          </div>
         </div>
         <div class="field">
           <label for="details">Anything else we should know?</label>
@@ -738,6 +758,8 @@
       <a href="service-areas/strathroy.html">Strathroy</a>
       <a href="service-areas/st-thomas.html">St. Thomas</a>
       <a href="service-areas/woodstock.html">Woodstock</a>
+      <a href="service-areas/lucan.html">Lucan</a>
+      <a href="service-areas/ilderton.html">Ilderton</a>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
